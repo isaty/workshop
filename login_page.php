@@ -34,7 +34,7 @@ if(isset($_POST['email'])&&isset($_POST['password'])&&!empty($_POST['email'])&&!
     if($result=mysqli_query($conn,$query))
     { 
         
-        $_SESSION['auth']=true;
+        $_SESSION['auth']=$email;
         header('location:home.php');
     }
     else

@@ -9,7 +9,7 @@ if(!empty($_POST['name'])&&!empty($_POST['email'])&&!empty($_POST['password'])&&
   $query="INSERT INTO `register` (`name`,`email`,`password`) VALUES ('$name','$email','$pass');";
   if(mysqli_query($conn,$query))
   {
-   $_SESSION['auth']=true;
+   $_SESSION['auth']=$email;
    header('Location:home.php');
   }
   else
