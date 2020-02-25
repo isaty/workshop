@@ -1,12 +1,13 @@
 <?php
 session_start();
+require 'connect.php';
 if(isset($_SESSION['auth']))
 {
     header('Location:home.php');
 }
 ?>
     <body>
-    <form aciton="login.php" method="POST">
+    <form action="login_page.php" method="POST">
         <table>
     <tr>
         <td>Email</td>
@@ -23,3 +24,22 @@ if(isset($_SESSION['auth']))
 </table>
 </form>
     </body>
+<?php
+
+if(isset($_POST['email'])&&isset($_POST['password'])&&!empty($_POST['email'])&&!empty($_POST['password']))
+{
+    $email=$_POST['email'];
+    $pass=$_POST['password'];
+    $query="SELECT * FROM register where email='$email' AND password='$pass' ;  ";
+    if($result=mysqli_query($conn,$query))
+    { 
+        
+        $_SESSION['auth']=true;
+        header('location:home.php');
+    }
+    else
+        header('location:login_page.php');
+
+}
+?>
+    

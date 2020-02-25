@@ -18,7 +18,9 @@ if(!empty($_POST['name'])&&!empty($_POST['email'])&&!empty($_POST['password'])&&
 }
 }
 else
-{echo "fill all the field";}
+{
+  echo "fill all the field<script>setimeout(function(){window.location='Registration.html';},3000)</script>";
+}
 
 
 ?>
