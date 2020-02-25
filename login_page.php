@@ -6,7 +6,7 @@ if(isset($_SESSION['auth']))
 }
 ?>
     <body>
-    <form action="login.php" method="POST">
+    <form action="login_page.php" method="POST">
         <table>
     <tr>
         <td>Email</td>
@@ -25,9 +25,15 @@ if(isset($_SESSION['auth']))
     </body>
 <?php
 require 'connect.php';
-if(isset($_POST['username'])&&isset($_POST['password'])&&!empty($_POST['username'])&&!empty($_POST['password']))
+if(isset($_POST['email'])&&isset($_POST['password'])&&!empty($_POST['email'])&&!empty($_POST['password']))
 {
-    $query="SELECT * FROM ";
+    $query="SELECT * FROM register where `email`=$_POST['email'] `password`=$_POST['passowrd'];";
+    if(mysqli_query($query))
+    { 
+        $_SESSION['auth']=true;
+        header('location:home.php');
+    }
+        header('location:login_page.php');
 }
 ?>
     
