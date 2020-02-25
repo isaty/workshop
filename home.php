@@ -16,9 +16,9 @@ if(isset($_SESSION['auth']))
    </body> 
   </html>
 <?php
-if(isset($_GET['search'])&&!empty($_GET['search'])){
+if(isset($_GET['search'])){
   $field=$_GET['search'];
-  $query="SELECT name,email From Register where `name`= $field";
+  $query="SELECT name,email From Register where name= '$field'";
   if($run=mysqli_query($conn,$query))
   {   echo "You searched for :".$field;
    while($query_run=mysqli_fetch_assoc($run))
