@@ -9,7 +9,7 @@ if(isset($_SESSION['auth']))
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </head>
     <body>
-    <form action="login.php" method="POST">
+    <form action="login_page.php" method="POST">
         <table>
     <tr>
         <td>Email</td>
