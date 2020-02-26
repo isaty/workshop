@@ -10,7 +10,7 @@ if(isset($_SESSION['auth']))
    <body>
    <h1>Search other users</h1>
    <form action="home.php">
-   Search:<input type="text" name="search">
+   Search:<input type="textarea" value="<?php echo $_GET['search']; ?>" name="search">
    <button type="submit">Search</button>
    </form>
    </body> 
@@ -18,7 +18,8 @@ if(isset($_SESSION['auth']))
 <?php
 if(isset($_GET['search'])){
   $field=$_GET['search'];
-  $query="SELECT name,email From Register where name= '$field'";
+  $query="SELECT name,email FROM Register where name = '$field'";
+  echo $query;
   if($run=mysqli_query($conn,$query))
   {   echo "You searched for :".$field;
    while($query_run=mysqli_fetch_assoc($run))
@@ -27,7 +28,10 @@ if(isset($_GET['search'])){
      echo "<h2>".$query_run['email']."</h2><br>";
    }
 
+  } else {
+    echo mysqli_error($conn);
   }
+  // echo
 
 }
 ?>

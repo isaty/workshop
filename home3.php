@@ -8,8 +8,10 @@ if(isset($_SESSION['auth']))
    if($result=mysqli_query($conn,$query))
 {
     while($run=mysqli_fetch_assoc($result)){
-        echo "<h3>".$run['name']."<h3>";
-        echo "<h3>".$run['comment']."<h3>";
+       $html="<h3>".$run['name']."<h3>"."<h3>".$run['comment']."<h3>";
+       echo "<script>document.getElementById('content').innerHTML=+".$html." </script>";
+        // echo "<h3>".$run['name']."<h3>";
+        // echo "<h3>".$run['comment']."<h3>";
     }
 }
 ?>
@@ -17,26 +19,15 @@ if(isset($_SESSION['auth']))
       <title>Comment</title>
        <body>
        <h1>Comment Section</h1>
-       <form action="home3.php" method=POST>
+       <div id="content"></div>
+       <form action="home3link.php" method=POST>
        Name:<input type="text" name="name">
-       Comment:<input type="textbox" name="comment">
+       Comment:<input type="textarea" name="comment">
        <button type="submit">Search</button>
        </form>
        </body> 
       </html>
 <?php
- if(isset($_POST['name'])&&isset($_POST['comment']))
- {
-     $name=$_POST['name'];
-     $comment=$_POST['comment'];
-   $query1="INSERT INTO `comment` (`name`,`comment`) VALUES ('$name','$comment');";
-    if(mysqli_query($conn,$query1))
-    {
-        echo "<h3>".$name."<h3>";
-        echo "<h3>".$comment."<h3>";
-    } 
-
-}
  }//end of auth
 else 
 header('location:login_page.php');

@@ -10,14 +10,17 @@ if(isset($_SESSION['auth']))
       src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
     </script>
        <body>
-       
+       <button><div class="tab" id="tab1" onclick="chooseTab('1')">Image 1</div></button>
+        <button><div class="tab" id="tab2" onclick="chooseTab('2')">Image 2</div></button>
+        <button><div class="tab" id="tab3" onclick="chooseTab('3')">Image 3</div></button> 
+        <div id="tabContent"> </div>
        <script>
        function chooseTab(num){
          
        var html = "Image " + parseInt(num) + "<br>";
         html += "<img src='public/" + num + ".jpg' />";
-        $('#tabContent').html(html);  
-        console.log(html);
+        // $('#tabContent').html(html);  
+        document.querySelector('#tabcontent').innerHTML=html
         window.location.hash = num;
        }
 
@@ -26,10 +29,6 @@ if(isset($_SESSION['auth']))
       }
        </script>
        </body> 
-        <button><div class="tab" id="tab1" onclick="chooseTab('1')">Image 1</div></button>
-        <button><div class="tab" id="tab2" onclick="chooseTab('2')">Image 2</div></button>
-        <button><div class="tab" id="tab3" onclick="chooseTab('3')">Image 3</div></button> 
-        <div id="tabContent"> </div>
       </html>
     <?php
 }

@@ -7,11 +7,17 @@ if(isset($_SESSION['auth']))
     // if(isset($_POST['reciever'])&&isset($_POST['amount']))
     if(isset($_GET['reciever'])&&isset($_GET['amount']))
     {
-        // $funds=
-        $query="UPDATE register WHERE email='$email' SET fund=fund-'$funds';";
+        $funds=$_GET['amount'];
+        $name=$_GET['reciever'];
+        $email=$_SESSION['auth'];
+        $query="UPDATE register  SET funds=funds-'$funds' WHERE email='$email'";
         if(mysqli_query($conn,$query))
-        {
-            header('location:funds.php');
+        {  
+            $query2="UPDATE register  SET funds=funds+'$funds' WHERE name='$name'";
+             if(mysqli_query($conn,$query2))
+            header('location:http://localhost/workshop/funds.php');
+             else
+             header('location:http://localhost/workshop/home.php');
         }
         else
         echo "Something Went Wrong";
