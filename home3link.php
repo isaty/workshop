@@ -3,7 +3,7 @@ session_start();
 require "connect.php";
 if(isset($_SESSION['auth']))
 {
-  if(isset($_POST['name'])&&isset($_POST['comment'])&&!empty($_POST['name'])&&!empty($_POST['comment']))
+  if(isset($_POST['name'])&&isset($_POST['comment']))
   {   $name=$_POST['name'];
       $comment=$_POST['comment'];
       $query="INSERT INTO `register` (`name`,`comment`) VALUES ('$name','$comment');";
