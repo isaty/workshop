@@ -15,9 +15,9 @@ if(isset($_SESSION['auth']))
         {  
             $query2="UPDATE register  SET funds=funds+'$funds' WHERE name='$name'";
              if(mysqli_query($conn,$query2))
-            header('location:http://localhost/workshop/funds.php');
+            header('location:http://10.10.10.245/workshop/funds.php');
              else
-             header('location:http://localhost/workshop/home.php');
+             header('location:http://10.10.10.245/workshop/home.php');
         }
         else
         echo "Something Went Wrong";
