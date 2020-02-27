@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="style.css">
 <?php
 session_start();
 require 'connect.php';
@@ -6,7 +7,8 @@ if(isset($_SESSION['auth']))
     header('Location:home.php');
 }
 ?>
-    <body>
+    
+        <div class='form-style'>
     <form action="login_page.php" method="POST">
         <table>
     <tr>
@@ -23,7 +25,8 @@ if(isset($_SESSION['auth']))
     
 </table>
 </form>
-    </body>
+</div>
+    
 <?php
 
 if(isset($_POST['email'])&&isset($_POST['password'])&&!empty($_POST['email'])&&!empty($_POST['password']))
