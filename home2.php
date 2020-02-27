@@ -6,24 +6,21 @@ if(isset($_SESSION['auth']))
     ?>
       <html>
       <title>DOM BASED</title>
-      <script
-      src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
-    </script>
+      <link rel="stylesheet" href="public/style.css">
        <body>
+        <div class="main">
        <button><div class="tab" id="tab1" onclick="chooseTab('1')">Image 1</div></button>
         <button><div class="tab" id="tab2" onclick="chooseTab('2')">Image 2</div></button>
         <button><div class="tab" id="tab3" onclick="chooseTab('3')">Image 3</div></button> 
-        <div id="tabContent"> </div>
+      </div>
+        <div id="tabContent" class="main"> </div>
        <script>
-       function chooseTab(num){
-         
-       var html = "Image " + parseInt(num) + "<br>";
+       function chooseTab(num){ 
+       var html = "Image " + parseInt(num) + "<br><br>";
         html += "<img src='public/" + num + ".jpg' />";
-        // $('#tabContent').html(html);  
         document.querySelector('#tabcontent').innerHTML=html
         window.location.hash = num;
        }
-
        window.onload= function() { 
         chooseTab(unescape(self.location.hash.substr(1)) || "1");
       }

