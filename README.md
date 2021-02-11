@@ -1,5 +1,5 @@
 # workshop
-This App was developed on Raw Php, to explain the security threats that led to the standardization of some pratices we use today.
+This App was developed on Raw Php, to explain the security threats that led to the standardization of some practises we use today.
 We developed this app for our use on which we conducted some experiments to show audiences in our workshop that how a web security is compromised at application level.
 Some test we conducted :-
                      
